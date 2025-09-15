@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  body {
+    @apply antialiased bg-gray-900;
+    background-color: hsl(0, 0%, 10%);
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .slider-thumb {
+    @apply appearance-none;
+  }
+  
+  .slider-thumb::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full cursor-pointer shadow-lg;
+  }
+  
+  .slider-thumb::-moz-range-thumb {
+    @apply w-5 h-5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full cursor-pointer border-0 shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar with dark purple theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-purple-600 to-indigo-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-purple-500 to-indigo-500;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Loading animation with purple theme */
+@keyframes pulse-purple {
+  0%, 100% {
+    opacity: 1;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+  }
+  50% {
+    opacity: 0.8;
+    background: linear-gradient(135deg, #9333ea, #4f46e5);
+  }
+}
+
+.animate-pulse-purple {
+  animation: pulse-purple 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Image hover effects */
+.image-hover-effect {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Button focus styles with purple theme */
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-purple-400;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark-themed glass morphism effect */
+.glass-dark {
+  background: rgba(31, 41, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+/* Enhanced button styles for dark theme */
+.btn-purple-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-200;
+}
+
+.btn-purple-gradient:hover {
+  @apply from-purple-700 to-indigo-700 shadow-xl transform -translate-y-0.5;
+}
+
+.btn-purple-gradient:active {
+  @apply transform translate-y-0;
+}
+
+/* Custom radio button styles for dark theme */
+input[type="radio"] {
+  @apply bg-gray-700 border-gray-600;
+}
+
+input[type="radio"]:checked {
+  @apply bg-purple-500 border-purple-500;
+}
+
+input[type="checkbox"] {
+  @apply bg-gray-700 border-gray-600;
+}
+
+input[type="checkbox"]:checked {
+  @apply bg-purple-500 border-purple-500;
+}
+
+/* Range slider custom styles for dark theme */
+input[type="range"] {
+  @apply appearance-none bg-transparent cursor-pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  @apply w-full h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full cursor-pointer shadow-lg border-0;
+}
+
+input[type="range"]::-moz-range-track {
+  @apply w-full h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg border-0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply w-5 h-5 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full cursor-pointer border-0 shadow-lg;
+}
+
+/* Backdrop blur support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Custom animation for sparkles */
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Dark theme specific overrides */
+.dark-theme-input {
+  @apply bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400;
+}
+
+.dark-theme-input:focus {
+  @apply border-purple-500 ring-purple-500;
+}
+
+/* Enhanced dark theme card styles */
+.dark-card {
+  @apply bg-gray-800/70 backdrop-blur-sm border border-gray-700;
+}
+
+.dark-card-secondary {
+  @apply bg-gray-700/50 border border-gray-600;
+}
+
+/* Dark theme text colors */
+.text-primary-dark {
+  @apply text-gray-100;
+}
+
+.text-secondary-dark {
+  @apply text-gray-300;
+}
+
+.text-muted-dark {
+  @apply text-gray-400;
+}
+
+/* Dark theme button variants */
+.btn-dark-secondary {
+  @apply bg-gray-700 text-gray-200 hover:bg-gray-600 border border-gray-600;
+}
+
+.btn-dark-ghost {
+  @apply bg-transparent text-purple-300 hover:bg-gray-700 border border-gray-600;
+}
